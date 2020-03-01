@@ -12,7 +12,7 @@ I am going to explain 6 ways on how to do this.
 - [Polymorfism](#polymorfism)
 
 <a name="ternary_operator"></a>
-### 1) Ternary operator:
+## 1) Ternary operator:
 We are talking about this "condition ? expr1 : expr2", very easy.
 
 #### Example 1:
@@ -99,7 +99,7 @@ function getEventTarget(evt) {
 ```
 
 <a name="short_circuit"></a>
-### 2) Short circuit:
+## 2) Short circuit:
 It is a technique that uses the AND and OR operators to evaluate expressions.
 
 https://codeburst.io/javascript-short-circuit-conditionals-bbc13ac3e9eb
@@ -181,7 +181,7 @@ active && loan && sendMoney();
 ```
 
 <a name="function_delegation"></a>
-### 3) Function delegation:
+## 3) Function delegation:
 This technique mix the short circuit and separation code block with functions.
 
 #### Example 1:
