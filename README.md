@@ -232,7 +232,7 @@ function itemDropped(item, location) {
 
 
 <a name="no_switch"></a>
-## 4) Non branching strategie:
+## 4) Non branching strategy:
 This technique try to avoid the use of switch statemente. The idea is to create a map with keys/values and using a function
 to access the value of the key passed as parameter.
 
@@ -240,7 +240,7 @@ The idea came from this link: https://medium.com/chrisburgin/rewriting-javascrip
 
 #### Example 1:
 
-- **Code with IF**:
+- **Code with SWITCH**:
 ```javascript
 switch(breed){
 	case 'border':
@@ -270,6 +270,64 @@ const dogSwitch = (breed) =>({
 
 dogSwitch("border xxx")
 
+```
+
+**[⮬ back to top](#categories)**
+
+
+<a name="function_as_data"></a>
+## 5) Functions as Data:
+fgfdgdfsgssdfgdfgdfgdsfgdfgdfgdfgdfgsdfgdfgsdfgsdf
+
+#### Example 1:
+
+- **Code with IF**:
+```javascript
+
+```
+
+- **Refactored code**:
+```javascript
+
+Here is a simple calculator. With ifs….
+
+var calc = {
+    run: function(op, n1, n2) {
+        var result;
+        if (op == "add") {
+            result = n1 + n2;
+        } else if (op == "sub" ) {
+            result = n1 - n2;
+        } else if (op == "mult" ) {
+            result = n1 * n2;
+        } else if (op == "div" ) {
+            result = n1 / n2;
+        }
+        return result;
+    }
+}
+ 
+calc.run("sub", 5, 3); //2
+
+var calc = {
+    add : function(a,b) {
+        return a + b;
+    },
+    sub : function(a,b) {
+        return a - b;
+    },
+    mult : function(a,b) {
+        return a * b;
+    },
+    div : function(a,b) {
+        return a / b;
+    },
+    run: function(fn, a, b) {
+        return fn && fn(a,b);
+    }
+}
+
+calc.run(calc.mult, 7, 4); //28
 ```
 
 **[⮬ back to top](#categories)**
