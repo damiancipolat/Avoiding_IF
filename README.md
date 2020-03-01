@@ -331,3 +331,14 @@ calc.run(calc.mult, 7, 4); //28
 ```
 
 **[⮬ back to top](#categories)**
+
+
+### Readings:
+A list of interesting links about this same topic.
+
+- https://www.google.com/amp/s/javascriptweblog.wordpress.com/2010/07/26/no-more-ifs-alternatives-to-statement-branching-in-javascript/amp/
+- http://adripofjavascript.com/blog/drips/using-duck-typing-to-avoid-conditionals-in-javascript.html
+- https://hackernoon.com/rethinking-javascript-the-if-statement-b158a61cd6cb
+- https://stackoverflow.com/questions/57023787/descending-order-with-if-else-and-not-use-logical-operators-javascript
+- https://medium.com/front-end-weekly/javascript-path-to-eliminating-if-else-dab7a1912024
+- https://medium.com/edge-coders/coding-tip-try-to-code-without-if-statements-d06799eed231
