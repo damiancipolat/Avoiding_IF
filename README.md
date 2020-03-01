@@ -19,81 +19,81 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 
 - **Code with IF**:
 ```javascript
-	function saveCustomer(customer) {
-	  if (isCustomerValid(customer)) {
-	    database.save(customer)
-	  } else {
-	    alert('customer is invalid')
-	  }
-	}
+function saveCustomer(customer) {
+  if (isCustomerValid(customer)) {
+    database.save(customer)
+  } else {
+    alert('customer is invalid')
+  }
+}
 ```
 
 - **Refactored code**:
 ```javascript
-	function saveCustomer(customer) {
-	  return isCustomerValid(customer)
-	    ? database.save(customer)
-	    : alert('customer is invalid')
-	}
+function saveCustomer(customer) {
+  return isCustomerValid(customer)
+    ? database.save(customer)
+    : alert('customer is invalid')
+}
 ```
 
 - **ES6 style**:
 ```javascript
-	const saveCustomer = customer =>isCustomerValid(customer)?database.save(customer):alert('customer is invalid')
+const saveCustomer = customer =>isCustomerValid(customer)?database.save(customer):alert('customer is invalid')
 ```
 
 #### Example 2:
 
 - **Code with IF**:
 ```javascript
-	function customerValidation(customer) {
-	  if (!customer.email) {
-	    return error('email is require')
-	  } else if (!customer.login) {
-	    return error('login is required')
-	  } else if (!customer.name) {
-	    return error('name is required')
-	  } else {
-	    return customer
-	  }
-	}
+function customerValidation(customer) {
+  if (!customer.email) {
+    return error('email is require')
+  } else if (!customer.login) {
+    return error('login is required')
+  } else if (!customer.name) {
+    return error('name is required')
+  } else {
+    return customer
+  }
+}
 ```
 
 - **Refactored code**:
 ```javascript
-	// ES6 style custom formatted ternary magic
-	const customerValidation = customer =>
-	  !customer.email   ? error('email is required')
-	  : !customer.login ? error('login is required')
-	  : !customer.name  ? error('name is required')
-	                    : customer
+// ES6 style custom formatted ternary magic
+const customerValidation = customer =>
+  !customer.email   ? error('email is required')
+  : !customer.login ? error('login is required')
+  : !customer.name  ? error('name is required')
+                    : customer
 ```
 
 #### Example 3:
 
 - **Code with IF**:
 ```javascript
-	function getEventTarget(evt) {
-	    if (!evt) {
-	        evt = window.event;
-	    }
-	    if (!evt) {
-	        return;
-	    }
-	    var target;
-	    if (evt.target) {
-	        target = evt.target;
-	    } else {
-	        target = evt.srcElement;
-	    }
-	    return target;
-	}
+function getEventTarget(evt) {
+    if (!evt) {
+        evt = window.event;
+    }
+    if (!evt) {
+        return;
+    }
+    var target;
+    if (evt.target) {
+        target = evt.target;
+    } else {
+        target = evt.srcElement;
+    }
+    return target;
+}
 ```
 
 - **Refactored code**:
 ```javascript
-	function getEventTarget(evt) {
-    evt = evt || window.event;
-    return evt && (evt.target || evt.srcElement);
-	}
+function getEventTarget(evt) {
+  evt = evt || window.event;
+  return evt && (evt.target || evt.srcElement);
+}
 ```
