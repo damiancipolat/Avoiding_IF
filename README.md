@@ -277,21 +277,14 @@ dogSwitch("border xxx")
 
 <a name="function_as_data"></a>
 ## 5) Functions as Data:
-fgfdgdfsgssdfgdfgdfgdsfgdfgdfgdfgdfgsdfgdfgsdfgsdf
+We know that in JS the function are first class, so using it we can split the code into a function objects.
 
 #### Example 1:
 
 - **Code with IF**:
 ```javascript
 
-```
-
-- **Refactored code**:
-```javascript
-
-Here is a simple calculator. With ifs….
-
-var calc = {
+const calc = {
     run: function(op, n1, n2) {
         var result;
         if (op == "add") {
@@ -309,7 +302,11 @@ var calc = {
  
 calc.run("sub", 5, 3); //2
 
-var calc = {
+```
+
+- **Refactored code**:
+```javascript
+const calc = {
     add : function(a,b) {
         return a + b;
     },
