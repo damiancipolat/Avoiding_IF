@@ -4,14 +4,14 @@ at levels that I had never seen. That is why I think it is very important to sha
 I am going to explain 6 ways on how to do this.
 
 ### Categories:
-- Ternary operator
-- Short circuit
-- Function delegation
-- Non-branching strategie
-- Functions as Data
-- Polymorfism
+- [Ternary operator](#ternary_operator)
+- [Short circuit](#short_circuit)
+- [Function delegation](#function_delegation)
+- [Non-branching strategie](#no_switch)
+- [Functions as Data](#function_as_data)
+- [Polymorfism](#polymorfism)
 
-
+<a name="ternary-opertator"></a>
 ### 1) Ternary operator:
 We are talking about this "condition ? expr1 : expr2", very easy.
 
@@ -96,4 +96,25 @@ function getEventTarget(evt) {
   evt = evt || window.event;
   return evt && (evt.target || evt.srcElement);
 }
+```
+
+<a name="short_circuit"></a>
+### 2) Short circuit:
+We are talking about this "condition ? expr1 : expr2", very easy.
+
+#### Example 2:
+https://codeburst.io/javascript-short-circuit-conditionals-bbc13ac3e9eb
+
+- **Code with IF**:
+```javascript
+
+```
+
+- **Refactored code**:
+```javascript
+}
+```
+
+- **ES6 style**:
+```javascript
 ```
