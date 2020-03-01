@@ -17,7 +17,7 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 
 #### Example 1:
 
-**Code with IF**:
+- **Code with IF**:
 ```javascript
 	function saveCustomer(customer) {
 	  if (isCustomerValid(customer)) {
@@ -28,7 +28,7 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 	}
 ```
 
-**Refactored code**:
+- **Refactored code**:
 ```javascript
 	function saveCustomer(customer) {
 	  return isCustomerValid(customer)
@@ -37,14 +37,14 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 	}
 ```
 
-**ES6 style**:
+- **ES6 style**:
 ```javascript
 	const saveCustomer = customer =>isCustomerValid(customer)?database.save(customer):alert('customer is invalid')
 ```
 
 #### Example 2:
 
-**Code with IF**:
+- **Code with IF**:
 ```javascript
 	function customerValidation(customer) {
 	  if (!customer.email) {
@@ -59,7 +59,7 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 	}
 ```
 
-**Refactored code**:
+- **Refactored code**:
 ```javascript
 	// ES6 style custom formatted ternary magic
 	const customerValidation = customer =>
@@ -71,7 +71,7 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 
 #### Example 3:
 
-**Code with IF**:
+- **Code with IF**:
 ```javascript
 	function getEventTarget(evt) {
 	    if (!evt) {
@@ -90,7 +90,7 @@ We are talking about this "condition ? expr1 : expr2", very easy.
 	}
 ```
 
-**Refactored code**:
+- **Refactored code**:
 ```javascript
 	function getEventTarget(evt) {
     evt = evt || window.event;
