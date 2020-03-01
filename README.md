@@ -11,7 +11,7 @@ I am going to explain 6 ways on how to do this.
 - [Functions as Data](#function_as_data)
 - [Polymorfism](#polymorfism)
 
-<a name="ternary-operator"></a>
+<a name="ternary_operator"></a>
 ### 1) Ternary operator:
 We are talking about this "condition ? expr1 : expr2", very easy.
 
