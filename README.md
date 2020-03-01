@@ -182,28 +182,43 @@ active && loan && sendMoney();
 
 <a name="function_delegation"></a>
 ### 3) Function delegation:
-It is a technique that uses the AND and OR operators to evaluate expressions.
+This technique mix the short circuit and separation code block with functions.
 
 #### Example 1:
 
 - **Code with IF**:
 ```javascript
-
+function itemDropped(item, location) {
+    if (!item) {
+        return false;
+    } else if (outOfBounds(location) {
+        var error = outOfBounds;
+        server.notify(item, error);
+        items.resetAll();
+        return false;
+    } else {
+        animateCanvas();
+        server.notify(item, location);
+        return true;
+    }
+}
 ```
 
 - **Refactored code**:
 ```javascript
-
-```
-
-#### Example 2:
-
-- **Code with IF**:
-
-```javascript
-
-```
-
-- **Refactored code**:
-```javascript
+function itemDropped(item, location) {
+    var dropOut = function() {
+        server.notify(item, outOfBounds);
+        items.resetAll();
+        return false;
+    }
+ 
+    var dropIn = function() {
+        server.notify(item, location);
+        animateCanvas();
+        return true;
+    }
+ 
+    return !!item && (outOfBounds(location) ? dropOut() : dropIn());
+}
 ```
