@@ -100,21 +100,45 @@ function getEventTarget(evt) {
 
 <a name="short_circuit"></a>
 ### 2) Short circuit:
-We are talking about this "condition ? expr1 : expr2", very easy.
+It is a technique that uses the AND and OR operators to evaluate expressions.
 
-#### Example 2:
-https://codeburst.io/javascript-short-circuit-conditionals-bbc13ac3e9eb
+```javascript
+true || true;
+// true
+true || false;
+// true
+false || false;
+// false
+```
+
+#### Example 1:
 
 - **Code with IF**:
 ```javascript
+const isOnline = true;
+const makeReservation= ()=>{};
+const user = {
+	name:'Damian',
+	age:32,
+	dni:33295000
+};
+
+if (isOnline){
+	makeReservation(user);
+}
 
 ```
 
 - **Refactored code**:
 ```javascript
-}
-```
+const isOnline = true;
+const makeReservation= ()=>{};
+const user = {
+	name:'Damian',
+	age:32,
+	dni:33295000
+};
 
-- **ES6 style**:
-```javascript
+//Apply the short circuit to avoid the if.
+isOnline&&makeReservation(user);
 ```
