@@ -102,6 +102,8 @@ function getEventTarget(evt) {
 ### 2) Short circuit:
 It is a technique that uses the AND and OR operators to evaluate expressions.
 
+https://codeburst.io/javascript-short-circuit-conditionals-bbc13ac3e9eb
+
 ```javascript
 true || true;
 // true
