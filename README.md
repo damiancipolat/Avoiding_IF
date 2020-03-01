@@ -142,3 +142,38 @@ const user = {
 //Apply the short circuit to avoid the if.
 isOnline&&makeReservation(user);
 ```
+
+#### Example 2:
+
+- **Code with IF**:
+```javascript
+const active = true;
+const loan = {
+	uuid:123456,
+	ammount:10,
+	requestedBy:'rick'
+};
+
+const sendMoney = ()=>{};
+
+if (active&&loan){
+	sendMoney();
+}
+
+```
+
+- **Refactored code**:
+```javascript
+
+const active = true;
+const loan = {
+	uuid:123456,
+	ammount:10,
+	requestedBy:'rick'
+};
+
+const sendMoney = ()=>{};
+
+//Apply short circuit in this case, the loan is evaluated true because !=undefined
+active && loan && sendMoney();
+```
