@@ -3,6 +3,7 @@ at levels that I had never seen. That is why I think it is very important to sha
 
 I am going to explain 6 ways on how to do this.
 
+<a name="categories"></a>
 ### Categories:
 - [Ternary operator](#ternary_operator)
 - [Short circuit](#short_circuit)
@@ -13,7 +14,7 @@ I am going to explain 6 ways on how to do this.
 
 <a name="ternary_operator"></a>
 ## 1) Ternary operator:
-We are talking about this "condition ? expr1 : expr2", very easy.
+We are talking about this "**condition ? expr1 : expr2**", very easy.
 
 #### Example 1:
 
@@ -98,6 +99,8 @@ function getEventTarget(evt) {
 }
 ```
 
+**[⮬ back to top](#categories)**
+
 <a name="short_circuit"></a>
 ## 2) Short circuit:
 It is a technique that uses the AND and OR operators to evaluate expressions.
@@ -180,6 +183,8 @@ const sendMoney = ()=>{};
 active && loan && sendMoney();
 ```
 
+**[⮬ back to top](#categories)**
+
 <a name="function_delegation"></a>
 ## 3) Function delegation:
 This technique mix the short circuit and separation code block with functions.
@@ -222,3 +227,49 @@ function itemDropped(item, location) {
     return !!item && (outOfBounds(location) ? dropOut() : dropIn());
 }
 ```
+
+**[⮬ back to top](#categories)**
+
+
+<a name="no_switch"></a>
+## 4) Non branching strategie:
+This technique try to avoid the use of switch statemente. The idea is to create a map with keys/values and using a function
+to access the value of the key passed as parameter.
+
+The idea came from this link: https://medium.com/chrisburgin/rewriting-javascript-replacing-the-switch-statement-cfff707cf045
+
+#### Example 1:
+
+- **Code with IF**:
+```javascript
+switch(breed){
+	case 'border':
+		return 'Border Collies are good boys and girls.';
+		break;	
+	case 'pitbull':
+		return 'Pit Bulls are good boys and girls.';
+		break;	
+	case 'german':
+		return 'German Shepherds are good boys and girls.';
+		break;
+	default:
+		return 'Im default'
+
+}
+```
+
+- **Refactored code**:
+```javascript
+
+const dogSwitch = (breed) =>({
+  "border": "Border Collies are good boys and girls.",
+  "pitbull": "Pit Bulls are good boys and girls.",
+  "german": "German Shepherds are good boys and girls.",  
+})[breed]||'Im the default';
+
+
+dogSwitch("border xxx")
+
+```
+
+**[⮬ back to top](#categories)**
