@@ -4,7 +4,7 @@ at levels that I had never seen. That is why I think it is very important to sha
 
 I am going to explain 6 ways on how to do this.
 
-## Categories:
+### Categories:
 - Ternary operator
 - Short circuit
 - Function delegation
