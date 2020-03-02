@@ -1,3 +1,5 @@
+# Avoid use IF on our JS scripts:
+
 <img src="https://github.com/damiancipolat/Avoiding_IF/blob/master/doc/LOGO.png?raw=true" width="125px" align="right" />
 
 Well, I write this article because lately I was dealing with source code in js that had an excessive amount of if statement,
