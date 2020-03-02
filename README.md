@@ -5,7 +5,7 @@
 Well, I write this article because lately I was dealing with source code in js that had an excessive amount of if statement,
 at levels that I had never seen. That is why I think it is very important to share these simple techniques that will help us to write code without having to think about the "if" when deciding.
 
-I am going to explain 6 ways on how to do this.
+I am going to explain 6 ways on how to do this. The idea of ​​this is not to enter into paranoia of never using IF, it is to open the head to new ways of thinking about our decisions in JS.
 
 <a name="categories"></a>
 ### Categories:
@@ -333,6 +333,68 @@ calc.run(calc.mult, 7, 4); //28
 
 **[⮬ back to top](#categories)**
 
+<a name="polymorfism"></a>
+## 5) Polymorphism:
+Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+
+#### Example 1:
+
+- **Code with IF**:
+```javascript
+const bob = {
+  name:'Bob',
+  salary:1000,
+  job_type:'DEVELOPER'
+};
+
+const mary = {
+  name:'Mary',
+  salary:1000,
+  job_type:'QA'
+};
+
+const calc = (person) =>{
+    
+    if (people.job_type==='DEVELOPER')
+        return person.salary+9000*0.10;
+
+    if (people.job_type==='QA')
+        return person.salary+1000*0.60;
+}
+
+console.log('Salary',calc(bob));
+console.log('Salary',calc(mary));
+
+```
+
+- **Refactored code**:
+```javascript
+//Create function to different behaviour, same parameter call.
+const qaSalary  = (base) => base+9000*0.10;
+const devSalary = (base) => base+1000*0.60;
+
+//Add function to the object.
+const bob = {
+  name:'Bob',
+  salary:1000,
+  job_type:'DEVELOPER',
+  calc: devSalary
+};
+
+const mary = {
+  name:'Mary',
+  salary:1000,
+  job_type:'QA',
+  calc: qaSalary
+};
+
+//Same call.
+console.log('Salary',bob.calc());
+console.log('Salary',mary.calc());
+
+```
+
+**[⮬ back to top](#categories)**
 
 ### Readings:
 A list of interesting links about this same topic.
